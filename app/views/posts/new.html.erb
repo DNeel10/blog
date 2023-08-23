@@ -1,17 +1,5 @@
 <h1>Create a post<h1>
 
 <%=turbo_frame_tag id="posts" do %>
-  <%= form_with model: @post do |f| %>
-    <div>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
-
-    <div>
-      <%= f.label :body %>
-      <%= f.text_area :body %>
-    </div>
-
-    <%= f.submit "Post" %>
-  <% end %>
+  <%= render "form" %>
 <% end %>
