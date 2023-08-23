@@ -1,11 +1,13 @@
 <h1>Danny's Blog</h1>
 
 <h2>Recent Posts</h2>
-<div>
-  <%= turbo_frame_tag id="posts" do %>
+
+<%= turbo_frame_tag id="posts" do %>
+  <div>
     <%= link_to "Create new Post", new_post_path %>
-  <% end %>
-</div>
+  </div>
+<% end %>
+
 
 <div id="all_posts">
   <% @posts.each do |post| %>
