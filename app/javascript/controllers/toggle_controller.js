@@ -5,6 +5,6 @@ export default class extends Controller {
   static classes = [ "hidden" ]
 
   hide() {
-    this.listTarget.classList.toggle(this.changeClass)
+    this.listTarget.classList.toggle(this.hiddenClass)
   }
 }
