@@ -3,14 +3,16 @@
 <h2>Recent Posts</h2>
 
 <%= turbo_frame_tag id="posts" do %>
-  <div>
-    <%= link_to "Create new Post", new_post_path %>
+  <div data-controller="hello" >
+    <%= link_to "Create new Post", new_post_path, data: { action: "click->hello#alert" } %>
   </div>
 <% end %>
 
-
-<div id="all_posts">
-  <% @posts.each do |post| %>
-    <%= post.title %> | <%= post.date_created %><br>
-  <% end %>
+<div data-controller="toggle" data-toggle-change-class="d-none">
+  <div id="all_posts" data-toggle-target="list">
+    <%= render @posts %>
+  </div>
+  <button data-action="toggle#hide">click me</button>
 </div>
+
+
