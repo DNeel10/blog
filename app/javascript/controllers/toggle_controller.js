@@ -1,10 +1,15 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "list" ]
-  static classes = [ "hidden" ]
+  static targets = [ "secret", "buttonOne", "buttonTwo" ]
+  static classes = [ "change", "hidden", "visible" ]
 
-  hide() {
-    this.listTarget.classList.toggle(this.hiddenClass)
+  toggle() {
+    this.secretTarget.classList.toggle(this.changeClass)
+  }
+
+  swap() {
+    this.buttonOneTarget.classList.toggle(this.hiddenClass)
+    this.buttonTwoTarget.classList.toggle(this.visibleClass)
   }
 }

@@ -8,11 +8,25 @@
   </div>
 <% end %>
 
-<div data-controller="toggle" data-toggle-hidden-class="d-none">
-  <div id="all_posts" data-toggle-target="list">
+<div data-controller="toggle" data-toggle-change-class="d-none">
+  <div id="all_posts" data-toggle-target="secret">
     <%= render @posts %>
   </div>
-  <button data-action="toggle#hide">click me</button>
+  <button data-action="toggle#toggle">Hide Posts</button>
+</div><br>
+
+
+<h2>Favorite Posts</h2>
+<div data-controller="toggle" data-toggle-change-class="d-block">
+  <div style="display: none" id="favorite_posts" data-toggle-target="secret">
+    <%= render @posts %>
+  </div>
+  <button data-action="toggle#toggle">Show Favorites</button>
+</div><br>
+
+<div data-controller="toggle" data-toggle-hidden-class="d-none" data-toggle-visible-class="d-block">
+  <button data-toggle-target="buttonOne" data-action="toggle#swap">Click Me</button>
+  <button style="display: none" data-toggle-target="buttonTwo" data-action="toggle#swap">No, Click ME</button>
 </div>
 
 
