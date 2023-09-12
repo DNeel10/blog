@@ -10,9 +10,8 @@ export default class extends Controller {
     })
   }
 
-  // highlight() {
-  //   this.checkTargets.forEach((check) => {
-  //     check.classList.toggle(this.changeClass)
-  //   })
-  // }
+  highlight() {
+    this.checkTarget.classList.toggle(this.changeClass)
+  }
+
 }
