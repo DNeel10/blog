@@ -1,15 +1,18 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "secret", "buttonOne", "buttonTwo" ]
-  static classes = [ "change", "hidden", "visible" ]
+  static targets = [ "element", "check"]
+  static classes = [ "change" ]
 
   toggle() {
-    this.secretTarget.classList.toggle(this.changeClass)
+    this.elementTargets.forEach((element) => {
+      element.classList.toggle(this.changeClass)
+    })
   }
 
-  swap() {
-    this.buttonOneTarget.classList.toggle(this.hiddenClass)
-    this.buttonTwoTarget.classList.toggle(this.visibleClass)
-  }
+  // highlight() {
+  //   this.checkTargets.forEach((check) => {
+  //     check.classList.toggle(this.changeClass)
+  //   })
+  // }
 }

@@ -9,7 +9,7 @@
 <% end %>
 
 <div data-controller="toggle" data-toggle-change-class="d-none">
-  <div id="all_posts" data-toggle-target="secret">
+  <div id="all_posts" data-toggle-target="element">
     <%= render @posts %>
   </div>
   <button data-action="toggle#toggle">Hide Posts</button>
@@ -17,16 +17,30 @@
 
 
 <h2>Favorite Posts</h2>
-<div data-controller="toggle" data-toggle-change-class="d-block">
-  <div style="display: none" id="favorite_posts" data-toggle-target="secret">
+<div data-controller="toggle" data-toggle-change-class="d-none">
+  <div class="d-none" id="favorite_posts" data-toggle-target="element">
     <%= render @posts %>
   </div>
   <button data-action="toggle#toggle">Show Favorites</button>
 </div><br>
 
-<div data-controller="toggle" data-toggle-hidden-class="d-none" data-toggle-visible-class="d-block">
-  <button data-toggle-target="buttonOne" data-action="toggle#swap">Click Me</button>
-  <button style="display: none" data-toggle-target="buttonTwo" data-action="toggle#swap">No, Click ME</button>
+<div data-controller="toggle" data-toggle-change-class="d-none">
+  <button data-toggle-target="element" data-action="toggle#toggle">Click Me</button>
+  <button class="d-none" data-toggle-target="element" data-action="toggle#toggle">No, Click ME</button>
+</div>
+
+<div data-controller="toggle" data-toggle-change-class="bg-primary">
+  <ul>
+    <li>
+      <input type="checkbox" data-action="change->toggle#toggle" id="Selection[one]">
+      <label for="Selection" data-toggle-target="element">Selection</label>
+    </li>
+
+    <li>
+      <input type="checkbox" data-action="change->toggle#toggle" id="Selection[two]">
+      <label for="Selection" data-toggle-target="element">Selection2</label>
+    </li>
+  </ul>
 </div>
 
 
